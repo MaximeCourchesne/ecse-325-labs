@@ -15,7 +15,7 @@ BCD2 : out std_logic_vector(3 downto 0);
  BCD1 : out std_logic_vector(3 downto 0) );
 end g09_Binary_BCD16;
 
-architecture implementation of gXX_Binary_BCD16 is
+architecture implementation of g09_Binary_BCD16 is
     component g09_DM74185 is
         port ( EDCBA : in std_logic_vector(4 downto 0);
                Y : out std_logic_vector(5 downto 0) );
@@ -195,6 +195,7 @@ begin
         EDCBA(2) => y_stage6_2(1),
         EDCBA(1) => y_stage6_2(0),
         EDCBA(0) => y_stage6_3(4),
+		  Y => y_stage7_3
     );
     
     -- Stage 8 (1 DM74185)
@@ -204,6 +205,7 @@ begin
         EDCBA(2) => y_stage7_1(1),
         EDCBA(1) => y_stage7_1(0),
         EDCBA(0) => y_stage7_2(4),
+		  Y => y_stage8
     );
     
     -- Connect output signals of the DM74185 to the BCDs
