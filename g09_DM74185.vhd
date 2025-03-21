@@ -1,9 +1,9 @@
 --
--- entity name: g09_DM74185
+-- entity name: gXX_DM74185 (replace “XX” by your group’s number)
 --
 -- Version 1.0
--- Authors: Maxime Courchesne, Ian Moore
--- Date: March 21, 2025
+-- Authors: (list the group member names here)
+-- Date: March 21, 2025 (enter the date of the latest edit to the file)
 
 library ieee; -- allows use of the std_logic_vector type
 use ieee.std_logic_1164.all;
@@ -18,7 +18,7 @@ begin
 	convert_BCD : process (EDCBA)
 	begin
 		case EDCBA is
-			when "00000" =>
+			when "00000" => 
 				Y <= "000000"; -- 0 1
 			when "00001" =>
 				Y <= "000001"; -- 2 3
@@ -80,8 +80,8 @@ begin
 				Y <= "101100"; -- 58 59
 			when "11110" =>
 				Y <= "110000"; -- 60 61
-			when "11111" =>
-				Y <= "110001"; -- 62 63
+			when others =>
+				Y <= "110001";
 		end case;
 	end process;
 end implementation;
